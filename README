@@ -1,0 +1,7 @@
+# tonal - tonal music library
+
+## Instructions
+See include/tonal.h for API.
+
+    $ cc -Iinclude -std=c99 -Wall -Wextra -pedantic -c tonal.c -o tonal.o
+
