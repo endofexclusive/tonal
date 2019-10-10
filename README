@@ -1,14 +1,68 @@
-# tonal - tonal music library
+About
+=====
 
-## Instructions
-See `include/tonal.h` for API.
+tonal is a programming library for operating on musical pitch and
+intervals. It perform diatonic transformations.
+
+
+Overview
+========
+
+The idea behind the tonal music library is to provide representations
+for
+- Tonal Pitch Classes,
+- Tonal Pitches,
+- Tonal Intervals,
+- Tonal Interval Classes,
+and to provide transformations which preserve the tonal properties.
+
+- A Tonal Pitch Class is represented by a Diatonic Pitch and a Pitch
+  Alteration. For example "Dbb".
+- A Tonal Interval Class is represented by an Interval Direction,
+  a Diatonic Interval and an Interval Alteration. For example an
+  "Down Augmented Fourth".
+- Tonal Pitch and Tonal Interval are similar with the addition of
+  octave representation.
+
+This library supports the following concepts, and more:
+- Differentiate an augmented fourth interval from a diminished fifth
+  interval.
+- Transpose the tone C# up an augmented prime and preserve the
+  tonal/alteration information.
+
+The tonal music library is based on ideas presented in the article
+  "The Tonal Music Pitch and Interval Domain: Terminology, Arithmetics,
+  Physical mappings."
+available at:
+  https://www.cs.cmu.edu/~music/392/course-material/lecture-notes/class3/class10-tonality2/arithmetics.ps
+
+
+Usage
+=====
+
+See `include/tonal.h` for the programming interface.
 
 Compile like this:
 
     $ cc -Iinclude -std=c99 -Wall -Wextra -pedantic -c tonal.c -o tonal.o
 
-## Unit tests
 
-Unit tests are provided in the `test` subdirectory. They depend on the `vtest`
-unit test framework referenced as a GIT submodule in `test/vtest`.
+Unit tests
+----------
+
+Unit tests are provided in the `test` subdirectory. They depend on
+the `vtest` unit test framework available as a GIT submodule in
+`test/vtest`.
+
+    $ git submodule init
+    $ git submodule update
+    $ cd test
+    $ make
+    $ ./test_tonal
+    Ebb4    shifted <Up 0 Octave(s) + Augmented Prime>      is Eb4
+    Eb4     shifted <Up 0 Octave(s) + Augmented Prime>      is E4
+    E4      shifted <Up 0 Octave(s) + Augmented Prime>      is E#4
+    E#4     shifted <Up 0 Octave(s) + Augmented Prime>      is E##4
+    Bb8     shifted <Down 0 Octave(s) + Perfect Fifth>      is Eb8
+    ...
 

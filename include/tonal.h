@@ -22,33 +22,6 @@
 
 #include <stdio.h>
 
-/*
- * tonal - tonal music library
- *
- * The idea behind the tonal music library is to provide representations for
- * - Tonal Pitch Classes,
- * - Tonal Pitches,
- * - Tonal Intervals,
- * - Tonal Interval Classes,
- * and to provide transformations which preserve the tonal properties.
- *
- * - A Tonal Pitch Class is represented by a Diatonic Pitch and a Pitch
- *   Alteration. For example "Dbb".
- * - A Tonal Interval Class is represented by an Interval Direction, a Diatonic
- *   Interval and an Interval Alteration. For example an "Augmented Fourth".
- * - Tonal Pitch and Tonal Interval are similar with the addition of octave
- *   representation.
- *
- * This library supports the following concepts, and more:
- * - Differentiate an augmented fourth interval from a diminished fifth
- *   interval. 
- * - Transpose the tone C# up an augmented prime and preserve the
- *   tonal/alteration information.
- *
- * The tonal music library is based on ideas presented in:
- * https://www.cs.cmu.edu/~music/392/course-material/lecture-notes/class3/class10-tonality2/arithmetics.ps
- */
-
 /* Diatonic Pitch */
 enum {
         DP_C,
